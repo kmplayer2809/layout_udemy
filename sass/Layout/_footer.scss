@@ -1,0 +1,93 @@
+footer {
+    .footer__main {
+        margin: 40px auto 30px;
+        width: 90%;
+
+        .footer__left {
+            ul {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                height: 110px;
+                list-style: none;
+
+                li {
+                    a {
+                        @include text($color-blue,$fs-0,$fw-normal);
+                        background-color: $color-trans;
+                        text-decoration: none;
+
+                    }
+
+                    &:nth-child(1) {
+                        a {
+                            font-weight: $fw-bold-1;
+                        }
+                    }
+
+                    &:nth-child(2) {
+                        a {
+                            font-weight: $fw-bold-1;
+                        }
+                    }
+                }
+            }
+        }
+
+        .footer__right {
+            button.btn {
+                outline: none !important;
+
+                i {
+                    margin-right: $mg-1;
+                }
+
+                span {
+                    margin-right: 40px;
+                }
+            }
+        }
+
+    }
+
+    hr {
+        box-sizing: content-box;
+        height: 0;
+        margin: 0;
+        border: 0;
+        border-top: 1px solid #e8e9eb;
+    }
+    .footer__bottom{
+        padding: $pd-2 0;
+        width: 90%;
+        margin: auto;
+        .footer__bottom-left{
+            display: flex;
+            align-items: center;
+            a{
+                width: 15%;
+               img{
+                    width: 100%;
+                    display: block;
+                }
+            }
+            p{
+                margin-left: $mg-1;
+            }
+        }
+        
+        .footer__bottom-right{
+            ul{
+                li{
+                    display: inline;
+                    margin: 0 $mg-1 - 5;
+                    a{
+                        @include text($color-blue, $fs-0 - 1, $fw-normal);
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+
+}

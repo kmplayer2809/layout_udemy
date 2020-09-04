@@ -1,0 +1,53 @@
+.banner {
+    width: 100%;
+    background-color: $color-black-0;
+    color: $color-gray-5;
+    position: relative;
+    &::before{
+        position: absolute;
+        height: 8px;
+        width: 100%;
+        top: 0;
+        left: 0;
+        content: "";
+        background: linear-gradient(-45deg,#EC5252 0%,#6E1A52 100%);
+    }
+    .banner__content {
+
+
+        text-align: center;
+
+        .banner__icons {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            padding: $mg-2 + 20 0;
+        }
+
+        .banner__text {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            align-items: center;
+        }
+
+        .banner__items {
+            i {
+                @include text($color-white-0, $fs-3 +1 , $fw-normal);
+            }
+
+            h3 {
+                @include text($color-white-0, $fs-3, $fw-bold-1);
+                margin-bottom: $mg-2 - 5;
+            }
+
+            p {
+                margin-bottom: $mg-2 - 5;
+            }
+
+        }
+    }
+    @include reponsive("large"){
+        i{
+            display: none;
+        }
+    }
+}

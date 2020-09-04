@@ -1,0 +1,158 @@
+.myNavBar{
+    border-bottom: 1px solid $color-gray-3;
+    .navbar-brand{
+        align-self: center;
+        flex-grow: 1;
+        img{
+            width: 110px;
+        }
+    }
+    .categories{
+        @include text($color-black-0,$fs-1, $fw-normal);
+        align-self: center;
+        flex-grow: 1;
+    }
+    .input__search{
+        flex-grow: 5;
+        align-self: center;
+        background-color: $color-gray-1;
+        @include form($color-trans, $color-white-0,$color-gray-1);
+    }
+    .navbar-nav{
+        width: 100%;
+        justify-content: space-between;
+        .nav-item{
+            align-self: center;
+            .nav-link{
+                @include text($color-black-light, $fs-1, $fw-normal);
+                padding: $pd-1 $pd-2;
+            }
+            &:hover{
+                background-color: $color-gray-1;
+            }
+        }
+        .nav-item:nth-child(3){
+            border-radius: 50%;
+        }
+    } 
+    @include reponsive("extra-large"){
+        .business, .instructor{
+            display: none;
+        }
+    }
+    @include reponsive("medium"){
+        .categories, .input__search{
+            display: none;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+// .myNavBar{
+//     border-bottom: 1px solid $color-gray-3;
+//     .navbar-brand{
+//         flex-grow: 1;
+//         img{
+//             width: 110px;
+//         }
+//     }
+//     .categories{
+//         @include text($color-black-light, $fs-1, $fw-normal);
+//         flex-grow: 1;
+//         align-self: center;
+//     }
+//     .input-search{
+//         flex-grow: 5;
+//         .form-control{
+//             background-color: $color-gray-1;
+//             border: none;
+//             transition: none;
+//             &:focus{
+//                 box-shadow: none;
+//                 background-color: $color-white-0;
+//                 border:1px solid $color-gray-3;
+//                 border-right: none;
+//             }
+//             &:focus + .input-group-prepend{
+//                 .input-group-text{
+//                     color: $color-red-0;
+//                     background-color: $color-white-0;
+//                     border:1px solid $color-gray-3;
+//                     border-left: none;
+//                 }
+//                 &:hover{
+//                     .input-group-text{
+//                         color: $color-white-0;
+//                         background-color: $color-red-0;
+//                     }
+//             }
+//         }
+//         .input-group-prepend{
+//             .input-group-text{
+//                 background-color: $color-gray-1;
+//                 color: $color-red-0;
+//                 border: none;
+//             }
+//             &:hover{
+//                 .input-group-text{
+//                     color: $color-white-0;
+//                     background-color: $color-red-0;
+//                 }
+//             }
+//         }
+//     }
+//     }
+//     .navbar-nav{
+//         justify-content: space-between;
+//         width: 100%;
+//         .nav-item{
+//             display: flex;
+//             justify-content: center;
+//             align-items: center;
+//         }
+//         .nav-item:nth-child(1), .nav-item:nth-child(2){
+//             .nav-link{
+//                 @include text($color-black-light, $fs-1, $fw-normal);
+//                 padding: $pd-1 $pd-2;
+//             }
+//             &:hover{
+//                 background-color: $color-gray-1;
+                
+//             }
+//         }
+//         .nav-item:nth-child(3){
+//                 height: 55px;
+//                 width: 55px;
+//                 line-height: 55px;
+//                 border-radius: 50%;
+//                 &:hover{
+//                     background-color: $color-gray-1; 
+//                 }
+//         }
+//         .button{
+
+//         }
+//     }
+//     @include reponsive("extra-large"){
+//         .navbar-nav{
+//             .business, .instructor{
+//                 display: none;
+//             }
+//         }
+//     }
+//     @include reponsive("medium"){
+//         .categories,.input-search{
+//             display: none;
+//         }
+//         .nav-item:nth-child(3){
+//             display: none;
+//         }
+//     }
+// }

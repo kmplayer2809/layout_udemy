@@ -1,0 +1,88 @@
+.say{
+    background-color: $color-gray-5;
+    .student__say{
+        width: 90%;
+        margin: auto;
+        .student__say__box{
+            background-color: $color-white-0;
+            box-shadow: 0 1px 3px 0 rgba(20,23,28,.15);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            min-height: 350px;
+            padding: 36px;
+            border-radius: $border-radius + 1;
+            .student__box__top{
+                line-height: 64px;
+                height: 64px;
+                .student__box__img{
+                    text-align: center;
+                    width: 64px;
+                    background-color: $color-gray-4;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    margin-right: $mg-1;
+                    img{
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                    }
+                    p{
+                        @include text($color-white-0, $fs-2 -2, $fw-bold);
+                    }
+                }
+                .student__name{
+                    @include text($color-black-0, $fs-0 + 1, $fw-bold-1);
+                }
+            }
+            .student__box__bottom{
+                margin-top: $mg-2;
+                span{
+                    @include text($color-black-0, $fs-0 + 1, $fw-normal);
+                }
+            }
+        }
+    }
+    .company__say{
+        text-align: center;
+        width: 70%;
+        margin: auto;
+        h3{
+            @include text($color-gray-4, $fs-1, $fw-normal);
+            padding-top: 30px;
+        }
+        .company__say__item{
+            // display: inline-flex;
+            // justify-content: center;
+            // align-items: center;
+            // flex-wrap: wrap;
+            padding-top: 32px;
+            margin-right: 0;
+            .logo__item{
+                img{
+                    max-width: 100%;    
+                    height: 25px;
+                }
+            }
+        }
+    }   
+    .bottom__say{
+        text-align: center;
+        .bottom__say__left, .bottom__say__right{
+            display: flex;
+            justify-content: center;
+            padding: $pd-2+8 $pd-2+10;
+            .bottom__say__content{
+                max-width: 400px;
+            }
+        }
+    }
+    // @include reponsive("large") {
+    //     .company__say__item{
+    //         .logo__item{
+    //             margin: 0 32px 8px;
+    //         }
+    //     }
+    // }
+
+}

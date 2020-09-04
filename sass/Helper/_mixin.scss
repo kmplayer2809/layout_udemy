@@ -1,0 +1,127 @@
+@mixin text($color, $fs, $fw) {
+    color: $color;
+    font-size: $fs;
+    font-weight: $fw;
+}
+
+@mixin button($color, $bg-color, $fw, $pd-top-bottom, $pd-right-left, $border-color, $bg-color-hover) {
+    color: $color;
+    background-color: $bg-color;
+    font-weight: $fw;
+    padding: $pd-top-bottom $pd-right-left;
+    border: 1px solid $border-color;
+
+    &:hover {
+        background-color: $bg-color-hover;
+    }
+}
+
+@mixin form($bg-color, $bg-color-focus, $border-color-focus) {
+    .form-control {
+        background-color: $bg-color;
+        color: $color-black-0;
+        border: 1px solid $color-trans;
+        transition: none;
+
+        &:focus {
+            box-shadow: none;
+            background-color: $bg-color-focus;
+            border: 1px solid $border-color-focus;
+            border-right: none;
+        }
+
+        &:focus+.input-group-prepend {
+            .input-group-text {
+                background-color: $bg-color-focus;
+                border: 1px solid $border-color-focus;
+                border-left: none;
+            }
+
+            &:hover {
+                .input-group-text {
+                    background-color: $color-red-0;
+                    color: $color-white-0;
+                }
+            }
+        }
+    }
+
+    .input-group-prepend {
+        cursor: pointer;
+
+        .input-group-text {
+            color: $color-red-0;
+            background-color: $color-trans;
+            border: 1px solid $color-trans;
+        }
+
+        &:hover {
+            .input-group-text {
+                background-color: $color-red-0;
+                color: $color-white-0;
+            }
+        }
+    }
+
+}
+
+@mixin owlCarousel__config() {
+    position: relative;
+    margin-top: $mg-2;
+
+    .card-title {
+        @include text($color-black-0, $fs-0, $fw-bold);
+    }
+
+    .card-text {
+        @include text($color-gray-4, $fs-1, $fw-normal);
+    }
+
+    .rating {
+        display: flex;
+
+        .rating__star {
+            @include text($color-yellow, $fs-1, $fw-normal);
+            margin-right: $mg-0;
+        }
+
+        span:nth-child(2) {
+            @include text($color-gray-4, $fs-1, $fw-bold);
+            margin-right: $mg-0;
+        }
+
+        span:last-child {
+            @include text($color-gray-4, $fs-1, $fw-normal);
+        }
+    }
+
+    .price {
+        text-align: right;
+
+        .old-price {
+            @include text($color-gray-4, $fs-1, $fw-normal);
+            text-decoration: line-through;
+        }
+
+        .new-price {
+            @include text($color-black-0, $fs-0, $fw-bold);
+        }
+    }
+}
+
+// break points
+
+
+@mixin reponsive($screen) {
+    @if map-has-key($map:$breakpoints, $key:$screen) {
+        $value: map-get($map:$breakpoints, $key:$screen);
+
+        @media screen and (max-width:$value) {
+            @content;
+        }
+    }
+
+    @else {
+        @warn "Nhap lai di";
+    }
+}

@@ -1,0 +1,18 @@
+.student{
+    margin-top: $mg-2;
+    h3{
+        @include text( $color-black-light, $fs-2 -1, $fw-normal);
+    }
+    .student__content{
+        width: 90%;
+        margin: auto;
+        .student__course{
+            .card{
+                .card-body{
+                    @include owlCarousel__config;
+                    min-height:180px;
+                }
+            }
+        }
+    }
+}
